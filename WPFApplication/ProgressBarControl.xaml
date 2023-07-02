@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFApplication.ProgressBarControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplication"
+        mc:Ignorable="d" ContentRendered="Window_ContentRendered"
+        Title="ProgressBar" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="40">
+            <Grid>
+                <ProgressBar Minimum="0" Name="Status1" Maximum="100"/>
+                <TextBlock Text="{Binding ElementName=Status1,Path=Value,StringFormat={}{0:0}%}" HorizontalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+        
+    </Grid>
+</Window>

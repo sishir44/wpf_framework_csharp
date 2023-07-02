@@ -1,0 +1,50 @@
+﻿<Window x:Class="WPFApplication.DataBinding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplication"
+        xmlns:local1="clr-namespace:ChangeVal" 
+        xmlns:system="clr-namespace:System;assembly=System.Core"
+        mc:Ignorable="d"
+        Title="DataBinding" Height="450" Width="800" x:Name="Window1">
+    <Window.Resources>
+        <local1:ChangeValue x:Key="r1"/>
+    </Window.Resources>
+    
+    <StackPanel>
+        <TextBox x:Name="heighttext" Text="{Binding Height, UpdateSourceTrigger=Explicit}"/>
+        <TextBox Text="{Binding Width, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Change Height" Click="Button_Click"/>
+
+        <!--Data Binding via in .xaml page only-->    
+        <TextBox x:Name="First"/>
+        <TextBlock Text="{Binding Path=Text,ElementName=First}"/>
+        
+        <!--Data Binding via Code Behind-->
+        <StackPanel>
+            <TextBox x:Name="nametxt"/>
+            <TextBlock x:Name="resultblock"/>
+        </StackPanel>
+
+        <DockPanel Margin="10">
+            <StackPanel DockPanel.Dock="Right" Margin="10,0,0,0">
+                <Button Content="Add Product" Click="Button_Click_1"/>
+                <Button Content="Change Product" Click="Button_Click_2"/>
+                <Button Content="Delete Product" Click="Button_Click_3"/>
+            </StackPanel>
+            <ListBox x:Name="list1" DisplayMemberPath="Name"/>
+        </DockPanel>
+
+        <!--ValueConverter:IValueConverter-->
+        <StackPanel>
+            <TextBox x:Name="v1"/>
+            <CheckBox Content="Yes" IsChecked="{Binding Path=Text,ElementName=v1, Converter={StaticResource r1}}"/>
+        </StackPanel>
+        
+        <!--StringFormat Property-->
+        <StackPanel>
+            <TextBlock Text="{Binding Source={x:Static system:DateTime.Now},StringFormat=Date:{0:dddd,MM,yyyy}}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

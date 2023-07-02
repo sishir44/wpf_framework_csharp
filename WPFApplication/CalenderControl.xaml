@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPFApplication.CalenderControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplication"
+        mc:Ignorable="d"
+        Title="CalenderControl" Height="450" Width="800">
+    
+    <!--<Viewbox Stretch="Fill" StretchDirection="UpOnly">
+        --><!--<Calendar DisplayDate="01.01.2025"/>-->
+        <!--<Calendar SelectionMode="MultipleRange"/>--><!--     
+    </Viewbox>-->
+    
+    <!--<StackPanel>
+        <Calendar x:Name="cal1"/>
+        <Calendar x:Name="cal2" SelectionMode="MultipleRange"/>
+        <TextBox Text="{Binding ElementName=cal1,Path=SelectedDate}"/>
+        <ListBox ItemsSource="{Binding ElementName=cal2,Path=SelectedDates}" MinHeight="150"/>
+    </StackPanel>-->
+
+    <!--<StackPanel>
+        <Calendar DisplayMode="Decade"/>
+    </StackPanel>-->
+
+    <StackPanel>
+        <Calendar SelectionMode="MultipleRange">
+            <Calendar.BlackoutDates>
+                <CalendarDateRange Start="07.03.2023" End="07.08.2023"/>
+            </Calendar.BlackoutDates>
+        </Calendar>
+    </StackPanel>
+</Window>

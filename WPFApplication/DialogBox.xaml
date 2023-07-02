@@ -1,0 +1,17 @@
+﻿<Window x:Class="WPFApplication.DialogBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplication"
+        mc:Ignorable="d"
+        Title="DialogBox" Height="450" Width="800">
+
+    <StackPanel>
+        <TextBox Text="" Width="200" x:Name="t1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Save File" Click="Button_Click" Width="200" Margin="10"/>
+        <Button Content="Font" Click="Button_Click_1" Width="200" Margin="10"/>
+        <Button Content="Color" Click="Button_Click_2" Width="200" Margin="10"/>
+
+    </StackPanel>
+</Window>

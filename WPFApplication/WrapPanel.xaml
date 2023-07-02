@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFApplication.WrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplication"
+        mc:Ignorable="d"
+        Title="WrapPanel" Height="300" Width="300">
+    
+    <WrapPanel Orientation="Vertical">
+        <Button>Button1</Button>
+        <Button>Button2</Button>
+        <Button>Button3</Button>
+        <Button>Button4</Button>
+        <Button Width="150">Button5</Button>
+        <Button Height="40">Button6</Button>
+        <Button>Button7</Button>
+        <Button>Button8</Button>
+        <Button>Button9</Button>
+        <Button>Button10</Button>
+    </WrapPanel>
+</Window>
